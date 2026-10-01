@@ -7,7 +7,13 @@ const JUMP={start:2850,end:2890,corridor:.68,safeKmh:160};
 const bends=[{a:350,b:680,k:1.2},{a:800,b:1130,k:-1.8},{a:1280,b:1590,k:2.15},{a:1750,b:2090,k:-2.05},{a:2190,b:2450,k:1.5}];
 const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
 function curve(z){for(const b of bends)if(z>=b.a&&z<=b.b)return b.k*Math.sin(Math.PI*(z-b.a)/(b.b-b.a));return 0;}
-function elevation(z){return 11*Math.sin(z/290)+6*Math.sin(z/145);}
+function elevation(z){
+ const raw=n=>11*Math.sin(n/290)+6*Math.sin(n/145),smooth=n=>n*n*(3-2*n);
+ if(z>=2700&&z<=3040)return 8;
+ if(z>2550&&z<2700){const u=smooth((z-2550)/150);return raw(2550)*(1-u)+8*u;}
+ if(z>3040&&z<3190){const u=smooth((z-3040)/150);return 8*(1-u)+raw(3190)*u;}
+ return raw(z);
+}
 function zone(z){return z<750?'LOCKDOWN AVENUE':z<1650?'FOUNDRY BENDS':z<2500?'THE ASCENT':z<2950?'BROKEN SKYWAY':'EXIT APPROACH';}
 function newState(){return {mode:'title',z:0,x:0,v:0,lv:0,hp:100,boost:1,t:0,cooldown:0,collisions:0,jump:null,jumped:false,landed:false,airY:0,steer:0,braking:false,boosting:false,countdown:3,reason:'',events:[],resultCount:0,impact:0};}
 function begin(s){Object.assign(s,newState(),{mode:'countdown'});}

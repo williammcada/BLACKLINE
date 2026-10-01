@@ -5,7 +5,7 @@ let prior=0,acc=0,lastMode='',ambient=0;
 const portrait=()=>window.innerHeight>window.innerWidth&&('ontouchstart' in window||navigator.maxTouchPoints>0);
 function viewport(){const h=window.visualViewport?.height||window.innerHeight;$('app').style.setProperty('--vh',Math.round(h)+'px');input.clear();if(state.mode==='running'||state.mode==='countdown')Sim.pause(state);}
 window.addEventListener('resize',viewport);window.visualViewport?.addEventListener('resize',viewport);
-async function start(){input.clear();Sim.begin(state);if(portrait())Sim.pause(state);await sound.unlock();}
+async function start(){input.clear();sound.reset();Sim.begin(state);if(portrait())Sim.pause(state);await sound.unlock();}
 $('play').onclick=start;$('retry').onclick=start;
 $('pause').onclick=()=>{input.interrupt();};
 $('resume').onclick=async()=>{if(portrait())return;input.clear();await sound.unlock();Sim.resume(state);};

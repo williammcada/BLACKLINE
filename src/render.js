@@ -28,7 +28,7 @@ class Renderer{
     if(z1>=S.C.length&&z1<S.C.length+18)for(let n=0;n<10;n++)this.poly([[a.x-a.w+n*a.w/5,a.y],[a.x-a.w+(n+1)*a.w/5,a.y],[b.x-b.w+(n+1)*b.w/5,b.y],[b.x-b.w+n*b.w/5,b.y]],(n+stripe)%2?'#fff1ca':'#14252e');
    }else{
     this.poly([[a.x-a.w*1.18,a.y],[a.x+a.w*1.18,a.y],[b.x+b.w*1.18,b.y],[b.x-b.w*1.18,b.y]],'#080f18');
-    this.rect(b.x-b.w,b.y,b.w*2,Math.max(1,b.f*.4),'#f09361');
+    if(z2>=S.JUMP.end)this.rect(b.x-b.w,b.y,b.w*2,Math.max(1,b.f*.4),'#f09361');
    }
    // Safety barriers and moving roadside light posts establish speed.
    if(!gap)for(const side of [-1,1]){const x1=a.x+side*a.w*1.1,x2=b.x+side*b.w*1.1;this.poly([[x1,a.y],[x1,a.y-a.f*.55],[x2,b.y-b.f*.55],[x2,b.y]],stripe?'#c68b61':'#4e6669');}

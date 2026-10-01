@@ -6,7 +6,7 @@
 **Status:** Initial design accepted for staged development; first mini-game implementation authorized.
 **Initial source:** BLACKLINE-v0.1.0-Technical-Specification.md, approved to proceed on 2026-10-01. No pre-existing racer or source commit.
 **Canonical repository:** williammcada/BLACKLINE; initial source commit `177690799fabab5bd12a057eb9ce4a72fcc42d37`.
-**Running version:** None.
+**Running version:** v0.1.0-alpha.1 development/playtest harness; verification status in VERIFICATION.md.
 **Next build:** v0.1.0-alpha.1, Milestone A.
 **Handbook:** v0.1.3, c50115ba1fea9cb552f3ad1415e670a219118b56, confirmed unchanged on 2026-10-01.
 
@@ -61,4 +61,4 @@ A standalone playable artifact, source and identifiable implementation checkpoin
 
 ## Current limitations
 
-Repository confirmed at initial commit 177690799fabab5bd12a057eb9ce4a72fcc42d37. No implementation, gameplay test, hosted build or physical-device verification yet. The standalone test harness does not replace the eventual cartridge narrative, choices, math gates, artwork and music.
+Repository confirmed at initial commit 177690799fabab5bd12a057eb9ce4a72fcc42d37. First implementation checkpoint: f4c17081566eda569f15f12af2b962563ad41103. Prototype verification is recorded separately in VERIFICATION.md; no hosted build or physical-device verification is claimed. The standalone test harness does not replace the eventual cartridge narrative, choices, math gates, artwork and music.
