@@ -1,0 +1,1 @@
+{"name":"blackline-mathquest-cartridge","version":"0.1.0-alpha.1","private":true,"scripts":{"build":"node scripts/build.cjs","test":"node --test tests/simulation.test.cjs"}}
