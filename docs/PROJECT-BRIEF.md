@@ -3,11 +3,11 @@
 **Brief version:** v0.1.0
 **Date:** 2026-10-01, Asia/Shanghai
 **Owner:** William McAda
-**Status:** Initial design accepted for staged development; first mini-game implementation authorized.
+**Status:** Owner approved alpha.1 handling and authorized the full course and lethal pursuit on 2026-10-01.
 **Initial source:** BLACKLINE-v0.1.0-Technical-Specification.md, approved to proceed on 2026-10-01. No pre-existing racer or source commit.
 **Canonical repository:** williammcada/BLACKLINE; initial source commit `177690799fabab5bd12a057eb9ce4a72fcc42d37`.
 **Running version:** v0.1.0-alpha.1 development/playtest harness; verification status in VERIFICATION.md.
-**Next build:** v0.1.0-alpha.1, Milestone A.
+**Next build:** v0.1.0-alpha.2, full escape and pursuit.
 **Handbook:** v0.1.3, c50115ba1fea9cb552f3ad1415e670a219118b56, confirmed unchanged on 2026-10-01.
 
 ## Purpose and audience
@@ -27,7 +27,7 @@ BLACKLINE is a MathQuest cartridge, explicitly confirmed by the owner on 2026-10
 
 ## Immediate implementation scope
 
-Follow docs/change-specs/v0.1.0-alpha.1.md. Build one 60–90 second driving strip and one gap jump, with pause, retry, HUD, integrity, basic audio and preliminary original scenery. The final six-section course and enemies are later work. A short prototype is a development fixture, not a reduction of the final five-minute maximum.
+Follow docs/change-specs/v0.1.0-alpha.2.md. Preserve approved handling; expand to six sections, three jumps, two repairs and lethal shooting/ramming pursuit. Target approximately 4–5 active minutes, maximum 300 seconds. This implements the combined pursuit/full-course milestones authorized after alpha.1 feedback. MathQuest cartridge narrative and math gates remain subsequent work.
 
 ## Devices and distribution
 
