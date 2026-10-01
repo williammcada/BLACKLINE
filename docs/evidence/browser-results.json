@@ -1,0 +1,42 @@
+{
+  "browser": "138.0.7204.0",
+  "desktop": {
+    "result": {
+      "mode": "result",
+      "z": 3600,
+      "x": -0.00010211048675189145,
+      "v": 61.11111111111111,
+      "lv": -2.2248885948765887e-59,
+      "hp": 100,
+      "boost": 1,
+      "t": 66.92104848384287,
+      "cooldown": 0,
+      "collisions": 0,
+      "jump": null,
+      "jumped": true,
+      "landed": true,
+      "airY": 0,
+      "steer": 0,
+      "braking": false,
+      "boosting": false,
+      "countdown": -0.01666666666666101,
+      "reason": "escaped",
+      "events": [],
+      "resultCount": 1,
+      "impact": 0,
+      "resumeMode": "running"
+    },
+    "realKeyboard": true
+  },
+  "syntheticTouch": {
+    "bothReleaseOrders": true,
+    "cancel": true,
+    "blur": true,
+    "contextmenu": true,
+    "rotation": true,
+    "controlsWithinViewport": true
+  },
+  "errors": [],
+  "physicalDevices": "Not run",
+  "hosted": "Not run"
+}
