@@ -1,28 +1,28 @@
 # BLACKLINE: Last Exit
 
-**A MathQuest cartridge.** Drive a stolen interceptor through a sealed industrial city: tight bends, broken skyways and, in the completed mini-game, lethal pursuers.
+**A MathQuest cartridge.** Race a stolen interceptor through a sealed industrial city. Brake through tight bends, jump the broken skyway and escape the patrol before lockdown.
 
-**Current build:** v0.1.0-alpha.1 — Driving Prototype. This is the standalone playtest harness for the cartridge’s mini-game. It is not a separate product or the completed cartridge.
+**Current build:** v0.1.0-alpha.2 — Full escape and pursuit. This standalone HTML is the cartridge mini-game’s playtest file. Narrative, choices and math gates are subsequent cartridge work.
 
-## Play the prototype
+## Play
 
-Download [BLACKLINE-v0.1.0-alpha.1.html](dist/BLACKLINE-v0.1.0-alpha.1.html) using GitHub’s **Download raw file** control, then open the downloaded file in desktop Chrome or Edge. The game contains its own code, graphics and generated audio; no network assets are needed.
+Download [BLACKLINE-v0.1.0-alpha.2.html](dist/BLACKLINE-v0.1.0-alpha.2.html) using GitHub’s **Download raw file** control. Open the downloaded file in desktop Chrome or Edge. The game embeds its code, graphics and generated audio; no network assets are needed.
 
-- A/D or Left/Right: steer.
-- S or Down: brake/drift.
-- Space: boost.
-- Escape or P: pause.
-- Touch controls are included for landscape play. Physical iPhone/iPad validation remains pending.
+- **Steer:** A/D or Left/Right.
+- **Brake/drift:** S or Down.
+- **Boost:** Space. Refills while driving.
+- **Pause:** Escape or P.
+- Landscape touch controls are included; physical iPhone/iPad validation is pending.
 
-Read the bend, brake before entry, then accelerate out. Center on the ramp at 160+ km/h; the jump is automatic. A clean run takes about one minute. The simulation has a five-minute active-play maximum.
+## The escape
 
-## What this milestone includes
+Six sections and 14.5 km: Lockdown Avenue, Foundry Switchbacks, Broken Skyway, Freight Underpass, Siren Spiral and Last Exit. Three mandatory gap jumps have marked speed requirements. Center on each ramp; the car jumps automatically. Boost is optional for every jump. Two off-center repairs restore 20 integrity.
 
-One 3.6 km development course, five alternating bends, visible hills, one gap jump, integrity/damage, rechargeable boost, pause/retry, original preliminary pixel scenery and synth/engine audio. No progress or settings persist across reload.
+Interceptors fire along a red aim lane; move after their aim locks. Armored rammers pull alongside, warn, then shove toward a committed line; brake behind them or move away. The rear scanner shows their actual positions and distance. Good driving and boost can increase your lead. One mistake need not end a run, but repeated hits destroy the car.
 
-Pursuers, the final six-section course, MathQuest narrative/choices and math gates are later milestones. The standalone Retry button is a playtest feature; the eventual cartridge adapter owns its gate/admission policy.
+A clean no-boost automated run takes about 4 minutes 26 seconds; the complete browser keyboard run took about 4 minutes 27 seconds. Your time will depend on braking, boost and impacts. Maximum: 300 active seconds. There are no respawns or saved progress in a round. Pause stops time, pursuit, projectiles and recharge.
 
-## Source and build
+## Build and verification
 
 Canonical repository: https://github.com/williammcada/BLACKLINE
 
@@ -33,22 +33,17 @@ npm run build
 npm test
 ```
 
-Builds are generated from `src/`; do not edit the distribution directly. There are no npm runtime dependencies. The optional browser regression script uses an environment-provided Playwright install and `CHROMIUM_PATH` pointing to its browser binary; see [verification](docs/VERIFICATION.md).
-
-## Project record
+Build from `src/`; do not edit the distribution directly. No runtime dependencies. Browser QA uses environment-provided Playwright/Chromium, as documented in [verification](docs/VERIFICATION.md).
 
 - [Project brief](docs/PROJECT-BRIEF.md)
-- [Full v0.1.0 design baseline](docs/change-specs/v0.1.0.md)
-- [Milestone A contract](docs/change-specs/v0.1.0-alpha.1.md)
-- [Verification and limits](docs/VERIFICATION.md)
-- [Current handoff](docs/HANDOFF.md)
+- [Full design](docs/change-specs/v0.1.0.md)
+- [alpha.2 approved changes](docs/change-specs/v0.1.0-alpha.2.md)
+- [Tests and limits](docs/VERIFICATION.md)
+- [Continuation record](docs/HANDOFF.md)
+- [Previous alpha.1 driving prototype](dist/BLACKLINE-v0.1.0-alpha.1.html)
 
-Initial source: `177690799fabab5bd12a057eb9ce4a72fcc42d37` (placeholder README).
-Design checkpoint: `57de81e97fcac55b6c95bc25a8a228fd24128a68`.
-First implementation checkpoint: `f4c17081566eda569f15f12af2b962563ad41103`.
+Handbook baseline: v0.1.3 / `c50115ba1fea9cb552f3ad1415e670a219118b56`. Consulted AI-START-HERE, UNIVERSAL-RULES, CONDITIONAL-STANDARDS, PROJECT-TEMPLATE and RELEASE-CHECKLIST. No handbook amendment.
 
-Handbook baseline: v0.1.3 / `c50115ba1fea9cb552f3ad1415e670a219118b56`. Read AI-START-HERE, UNIVERSAL-RULES, CONDITIONAL-STANDARDS, PROJECT-TEMPLATE and RELEASE-CHECKLIST. This project does not amend the handbook.
-
-No hosted deployment or physical-device verification is claimed. The next decision is the owner’s driving-feel review, before the pursuit milestone.
+No hosted deployment, physical-device certification or human music-quality assessment is claimed. All current graphics and music are original preliminary assets; further presentation refinement can follow playtesting.
 
 **A WILLIAM MCADA PRODUCT**

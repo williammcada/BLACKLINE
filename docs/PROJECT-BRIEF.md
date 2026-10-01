@@ -6,8 +6,8 @@
 **Status:** Owner approved alpha.1 handling and authorized the full course and lethal pursuit on 2026-10-01.
 **Initial source:** BLACKLINE-v0.1.0-Technical-Specification.md, approved to proceed on 2026-10-01. No pre-existing racer or source commit.
 **Canonical repository:** williammcada/BLACKLINE; initial source commit `177690799fabab5bd12a057eb9ce4a72fcc42d37`.
-**Running version:** v0.1.0-alpha.1 development/playtest harness; verification status in VERIFICATION.md.
-**Next build:** v0.1.0-alpha.2, full escape and pursuit.
+**Running version:** v0.1.0-alpha.2 full escape mini-game; verification status in VERIFICATION.md.
+**Next step:** Owner playtest of pursuit and full-course pacing; cartridge narrative/math integration remains subsequent work.
 **Handbook:** v0.1.3, c50115ba1fea9cb552f3ad1415e670a219118b56, confirmed unchanged on 2026-10-01.
 
 ## Purpose and audience
@@ -55,9 +55,9 @@ Handbook files read: AI-START-HERE.md, UNIVERSAL-RULES.md, CONDITIONAL-STANDARDS
 
 MathQuest cartridge narrative is later work. Math Arcade uses one math gate before each new round, with no interruption during driving. Its actual source/API must be inspected before adapter implementation. Reuse the canonical shared math system and record its source/bundle revision. Do not duplicate curriculum code or claim current host compatibility.
 
-## Definition of done for the first milestone
+## Definition of done for this milestone
 
-A standalone playable artifact, source and identifiable implementation checkpoint; automated physics/lifecycle checks; browser inspection of road/jump/HUD/screens; documented touch interruption checks; version and credit visible. Label any absent physical-device evidence Not run. Owner handling feedback is the decision gate for expanding the course. Do not describe this alpha as a verified release for devices that have not been checked.
+A standalone playable artifact, source and identifiable implementation checkpoint; all six sections and three gaps; actual lethal shooting and ramming enemies with readable/evasible warnings; measured complete runs near 4–5 minutes; pause/retry clears correct state; retained input/audio checks and visible version/credit. Label absent physical-device evidence Not run. Owner handling approval from alpha.1 is recorded; alpha.2 difficulty and pacing review remains pending. Do not describe this alpha as a verified physical-device release.
 
 ## Current limitations
 

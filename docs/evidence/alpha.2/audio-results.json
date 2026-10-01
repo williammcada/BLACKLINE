@@ -1,0 +1,11 @@
+{
+  "browser": "138.0.7204.0",
+  "stationaryHold": true,
+  "missedReleaseNativeReconciliation": true,
+  "captureFailure": true,
+  "pauseSuspendsAndStopsVoices": true,
+  "resumeAndRetryReuseContext": true,
+  "finishJingleRunsBeforeSuspend": true,
+  "mute": true,
+  "method": "External test instrumentation exposes existing state and Sound instance; synthetic events, not a physical device or listening test"
+}

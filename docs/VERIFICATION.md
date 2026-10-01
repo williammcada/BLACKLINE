@@ -1,47 +1,49 @@
-# BLACKLINE v0.1.0-alpha.1 verification
+# BLACKLINE v0.1.0-alpha.2 verification
 
 **Product:** BLACKLINE: Last Exit, a MathQuest cartridge.
-**Deliverable:** Standalone driving mini-game playtest harness, Milestone A.
-**Tested source candidate:** `5f6b441acc2c0d84a29badad1a351d9dfb13a1ad`.
-**Artifact:** `dist/BLACKLINE-v0.1.0-alpha.1.html` (33,035 bytes).
-**SHA-256:** `330c380114aeddf606c098ed62c7e5400f28ec940887056b0e3ea4dec294f1a2`.
-**Environment:** Linux container; Node.js; Playwright 1.62.1 with headless Chromium 138.0.7204.0. File URL, desktop 1280×720 and touch-emulated 852×393 / 393×852 viewports.
+**Deliverable:** Full escape mini-game, standalone playtest file; narrative/math wrapper remains later work.
+**Tested gameplay candidate:** `a6dc2b2b88f27c9ea22bbfdca50db70366a36ade`.
+**Artifact:** `dist/BLACKLINE-v0.1.0-alpha.2.html` (46,796 bytes).
+**SHA-256:** `fd0663736ed88aa6d7335edaf6fb3b13b89d0a52f3ae05b70d95ef7a83667055`.
+**Environment:** Linux container, Node.js, Playwright 1.62.1 and Chromium 138.0.7204.0; local file URL. Desktop 1280×720 and emulated mobile 852×393 / 393×852.
 
-The game source and distribution in the final delivery remain byte-identical to this tested candidate. Follow-up repository changes record evidence, the audio/recovery harness and release/handoff documentation only. This is a tested prototype, not a verified physical-device release.
+Gameplay source/distribution remain unchanged from the tested candidate. Follow-up commit records updated browser harnesses, evidence and release/handoff documents. This is a tested playtest build, not a verified physical-device release.
 
 ## Results
 
-| Check | Result | Evidence and scope |
+| Check | Result | Evidence and limits |
 | --- | --- | --- |
-| Simulation | Passed | All 10 node:test cases; acceleration, brake priority, pause/stall, collision throttling, curve braking, jumps/corridors, swept triggers, deadline, restart and complete run |
-| Full desktop keyboard run | Passed | Browser keyboard events drove from start through all bends and jump to finish in 66.921 active seconds; 100 integrity, no impacts, one terminal result |
-| No-boost solvability | Passed | Independent deterministic simulation run completed in 66.875 active seconds; 100 integrity, no impacts |
-| Pause/retry | Passed | Timer frozen while paused; retry resets round; fresh controls work; audio context reused |
-| Multi-contact control | Passed, synthetic | Steering plus boost/brake, both release orders, cancellation, blur and rotation |
-| Additional input recovery | Passed, synthetic | 1.6-second stationary hold remains active; capture failure and missing pointer release reconciled from native touch inventory pause safely |
-| Native context-menu event | Passed, synthetic | HUD contextmenu default prevented and game paused; this does not reproduce actual iOS long-press behavior |
-| Viewport layout | Passed, emulated | Landscape controls inside viewport; portrait pauses with rotation message; returning requires deliberate resume |
-| Audio lifecycle | Passed, instrumented | Pause stops/suspends voices; resume/retry reuse context; finish jingle completes before suspension; music/SFX mute produces no voices/engine gain |
-| Visual inspection | Passed | Inspected title, gameplay, bend, ramp, airborne, mobile title and mobile gameplay captures; gap corrected to remove misleading repeated bands |
-| Browser errors | Passed | No page errors during full keyboard and synthetic touch run |
-| Offline assets/build | Passed | Artifact opened from file URL with embedded code/art/audio; deterministic rebuild matches SHA-256 |
-| Physical iPhone Safari/Edge | Not run | Need actual device/OS/browser and exact artifact evidence |
-| Physical iPad Safari | Not run | Need actual device, safe-area, long-press, browser-bar, lock/unlock and sustained multi-touch checks |
-| Audible music quality | Not run | Audio scheduling/gain tested; human listening and musical preference review pending |
-| Owner handling/excitement review | Not run | Required before expanding into pursuit/full-course milestones |
+| Simulation suite | Passed | 16 tests: preserved handling, reset, AI pause, damage throttling/priority, all jump boundaries, finish/deadline, repairs, enemy travel/corners/gap failure, shot lock/evasion, ram hit/evasion, jump protection and burst deduplication |
+| Complete no-boost simulation | Passed | Seeds 7319, 17 and 999 completed all three jumps in 266.096 active seconds; 90 integrity; both enemy attack types occurred |
+| Concurrent pursuit caps | Passed | Full seeded runs never exceeded three enemies or one warning/attack owner |
+| Lethal enemy failure | Passed | Center-line driver ignoring shots was destroyed by interceptor gunfire; no catch-meter damage |
+| Complete browser keyboard run | Passed | Keyboard events with Playwright virtual clock, decisions every 100 ms: 267.240 active seconds, all three gaps, one terminal result, both enemy types; zero enemy hits and one repair collected |
+| Browser defeat/retry | Passed | Ignoring gunfire caused defeat at 88.233 active seconds; result explicitly identified interceptor gunfire; retry cleared enemies, bullets, health and hit totals |
+| Visual inspection | Passed | Six section captures, gun aiming warning, both ram phases, gap, defeat and mobile attack layout inspected; warnings/control areas remain visible |
+| Touch interruption regression | Passed, synthetic | Both multi-contact release orders, cancel, focus loss, native touch-inventory recovery after a missed release, capture failure and stationary held touch |
+| Viewport/native-menu regression | Passed, emulated/synthetic | Portrait pauses; landscape return requires resume; controls fit; contextmenu prevented. This does not establish actual iOS gesture/callout behavior |
+| Audio lifecycle | Passed, instrumented | Pause suspends/stops voices; resume/retry reuse context; finish jingle completes; music/SFX mute works |
+| Browser errors | Passed | No page errors during full keyboard run and synthetic mobile regression |
+| Build/package | Passed | Deterministic self-contained build; local source/distribution checked against saved GitHub blobs; archive integrity checked |
+| Physical iPhone/iPad Safari/Edge | Not run | Need real device, OS/browser, exact artifact, multi-touch, browser bars, lock/unlock, zoom and native-menu evidence |
+| Human difficulty/music review | Not run | Owner approved alpha.1 handling; alpha.2 pursuit/pacing and human listening remain for playtest |
+| Physical device frame-rate target | Not run | Virtual-clock completion is not a performance measurement |
 | Hosted deployment | Not run | No hosting service or URL configured |
-| Cartridge narrative/math integration | Not applicable | Later milestone; standalone Retry is deliberately ungated for playtesting |
-| Persistent saved-work deletion | Not applicable | Prototype stores no persistent progress, learner records, scores or settings |
+| Cartridge narrative/math integration | Not applicable | Subsequent milestone; the standalone test harness remains ungated |
+| Persistent-data deletion | Not applicable | No persistent learner records, progress, scores or settings |
 
-## Reproduce
+The complete keyboard run used the unmodified delivered file and browser keyboard input with a virtual clock. The mobile attack layout fixture and audio test inject observers to access existing state; they are not claims of unaided human play or physical-device validation.
 
-Run `npm run build` and `npm test` for dependency-free build/simulation checks. Browser harnesses need Playwright and a Chromium binary supplied by the QA environment:
+## Reproduction
+
+`npm run build` and `npm test` require Node.js with no runtime packages. Browser QA additionally requires Playwright and a Chromium executable supplied by the QA environment:
 
 ```sh
 CHROMIUM_PATH=/absolute/path/to/chromium node tests/browser.cjs
 CHROMIUM_PATH=/absolute/path/to/chromium node tests/audio-and-recovery.cjs
+CHROMIUM_PATH=/absolute/path/to/chromium node tests/failure.cjs
 ```
 
-The audio/recovery test injects observers that expose the existing simulation state and Sound instance. It does not alter the delivered file. The desktop full run uses actual browser keyboard events without state injection. JSON results are in `docs/evidence/`.
+Raw results are under `docs/evidence/alpha.2/`. The alpha.1 verification is retained under `docs/verification/alpha.1.md`, with its evidence in `docs/evidence/alpha.1/` and its original distribution preserved.
 
-Observed disruptive stuck input, unwanted viewport zoom/movement or native menus on any supported physical target remain release blockers for that target. This report does not certify those devices.
+Any observed disruptive stuck controls, unintended viewport movement/zoom or native menus remain release blockers on the affected physical target. Automated/emulated passes do not substitute for those device checks.

@@ -5,7 +5,7 @@ await p.addInitScript(()=>{
  Object.defineProperty(window,'BlacklineSound',{configurable:true,get:()=>Sound,set:V=>{Sound=class extends V{constructor(...args){super(...args);window.qaSound=this;}};}});
  Object.defineProperty(window,'BlacklineSim',{configurable:true,get:()=>Sim,set:V=>{Sim=V;const original=V.newState;V.newState=(...args)=>{const s=original(...args);if(!window.qaState)window.qaState=s;return s;};}});
 });
-await p.goto('file://'+path.resolve(__dirname,'../dist/BLACKLINE-v0.1.0-alpha.1.html'));await p.click('#play');await p.waitForFunction(()=>BLACKLINE.snapshot().mode==='running');assert.equal(await p.evaluate(()=>qaSound.ctx.state),'running');
+await p.goto('file://'+path.resolve(__dirname,'../dist/BLACKLINE-v0.1.0-alpha.2.html'));await p.click('#play');await p.waitForFunction(()=>BLACKLINE.snapshot().mode==='running');assert.equal(await p.evaluate(()=>qaSound.ctx.state),'running');
 await p.evaluate(()=>{window.originalAudio=qaSound.ctx;const button=document.querySelector('[data-action="left"]');button.setPointerCapture=()=>{};button.dispatchEvent(new PointerEvent('pointerdown',{pointerId:44,pointerType:'touch',bubbles:true,cancelable:true,buttons:1}));});await p.waitForTimeout(1600);assert.equal(await p.evaluate(()=>BLACKLINE.snapshot().steer),-1);
 // Missing pointer release: native touch inventory says all contacts ended.
 await p.evaluate(()=>{const e=new Event('touchend',{bubbles:true});Object.defineProperty(e,'touches',{value:[]});window.dispatchEvent(e);});await p.waitForTimeout(60);assert.equal(await p.evaluate(()=>BLACKLINE.snapshot().mode),'paused');assert.equal(await p.evaluate(()=>qaSound.ctx.state),'suspended');assert.equal(await p.evaluate(()=>qaSound.voices.size),0);

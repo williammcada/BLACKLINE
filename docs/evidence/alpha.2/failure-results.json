@@ -1,0 +1,12 @@
+{
+  "browser": "138.0.7204.0",
+  "failure": {
+    "seconds": 88.23333333332961,
+    "cause": "burst",
+    "hits": 10,
+    "text": "Final hit: interceptor gunfire"
+  },
+  "retryResetsEnemyState": true,
+  "mobileAttackLayout": true,
+  "method": "Desktop keyboard with virtual clock; mobile warning fixture uses injected observer"
+}
