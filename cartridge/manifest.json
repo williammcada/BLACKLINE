@@ -1,0 +1,27 @@
+{
+  "cartridgeId": "blackline",
+  "version": "0.2.0",
+  "status": "tested integration candidate; not deployed",
+  "hostRepository": "williammcada/Math-Quest---Vault-7-",
+  "hostBranch": "implement/blackline-v0.2.0",
+  "testedHostCommit": "2b8adea20407bb8b77a211f2211172830bf658b9",
+  "standaloneRacerBaseline": "0877ce64d6811742d28cfcf309293686aabdad43",
+  "files": {
+    "public/cartridges/blackline.js": "ae8b61d65d1d44e014d24035c0068bb1fbb61ead26fcddf363248a21aa368cdd",
+    "public/blackline-preview.html": "a59eca4dfa8bfcb75de817e8a6ced671fc061cf8be1b0d1297cd654d786709d9",
+    "public/blackline-preview.js": "555420a1aba3a94753a521723d9cbd9e783de7fa80403419887cc2c117f3973e",
+    "src/cartridges/blackline/validation.js": "7b698000f2a2640c9b9f43cf8c0cbca4b64295069fcb128389e57456608e461e",
+    "test/blackline-cartridge.test.mjs": "2d7526076cdc82763e778ebfb4ef8ff28c692b7601aa03f7f150274859c519c7",
+    "test/blackline-runtime.test.mjs": "867e8551042e59da731e10adc4029c6d7dec743e2e358e1f0cbd3066aaf63b76",
+    "public/games/blackline/sim.js": "d304409b94309a680284f489becefb3bac0c0c86369f56c9d6965c1a77a7698f",
+    "public/games/blackline/adapter.js": "19cf54d289109c6ccdc3dc92bc16e1a703f6fae7404c7ef9c7c8307a5ffe74ca",
+    "public/games/blackline/render.js": "311a7b480de693f32434d7b582004e54a235b27f03184efd33024c6da1714b55",
+    "public/games/blackline/audio.js": "fec3129cb874ce8a6c81620ab898f5910013b55130b651cb9b67c931d6f65ba8",
+    "public/assets/blackline/ending.svg": "4c2936a9b1d0394185defc80e69a7dd89421ef9607a2afe6cc0abef16a7a7092",
+    "public/assets/blackline/market.svg": "c342411fef64a2ad5d9ec2a129c55edf25984382008bd818e89ce58c702216bb",
+    "public/assets/blackline/ambient.wav": "d0db1f9b9bdbea3c1e0d792a7cac70c2c0adaf7cfc6135f7ec6c107ce3bd13dd",
+    "public/assets/blackline/cover.svg": "a720fb2b88b385e5b3f33c9fdfa1bb11cdb6c14943cc9b20e90b878633fa4398",
+    "public/assets/blackline/radio.svg": "8a5ce42e74a5f20334160d0049b1f30f1919670b5bd935dc7944dee9a0fe261c",
+    "public/assets/blackline/finale.wav": "17a8f0c50fc2485691a88e58838a5c6c8e2b18c46de882f440b2e984ba0e4409"
+  }
+}

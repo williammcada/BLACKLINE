@@ -1,3 +1,7 @@
+# BLACKLINE: Last Exit — MathQuest cartridge
+
+Cartridge **v0.2.0 is implemented and tested**, with the matching MathQuest host candidate saved on `implement/blackline-v0.2.0`. See [cartridge source and integration](cartridge/README.md) and [verification](docs/CARTRIDGE-VERIFICATION.md). Live deployment and physical iOS checks remain pending.
+
 # BLACKLINE: Last Exit
 
 **A MathQuest cartridge.** Race a stolen interceptor through a sealed industrial city. Brake through tight bends, jump the broken skyway and escape the patrol before lockdown.

@@ -62,3 +62,7 @@ A standalone playable artifact, source and identifiable implementation checkpoin
 ## Current limitations
 
 Repository confirmed at initial commit 177690799fabab5bd12a057eb9ce4a72fcc42d37. First implementation checkpoint: f4c17081566eda569f15f12af2b962563ad41103. Prototype verification is recorded separately in VERIFICATION.md; no hosted build or physical-device verification is claimed. The standalone test harness does not replace the eventual cartridge narrative, choices, math gates, artwork and music.
+
+## BLACKLINE cartridge v0.2.0 — 2026-10-02
+
+Implemented and tested in MathQuest candidate `2b8adea20407bb8b77a211f2211172830bf658b9` on `implement/blackline-v0.2.0`. Native classroom preparation gates, cargo and final crew votes, earned one-use upgrades, racer adapter with shared input, guided route, original SVG scene art and music, run validation and reconnect are implemented. The approved alpha.2 racer is retained. See the BLACKLINE v0.2.0 verification record. Deployment and physical iOS checks remain pending. This is a cartridge integration candidate, not a claim that the live Worker has been updated.
